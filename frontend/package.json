@@ -1,0 +1,85 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "homepage": ".",
+  "private": true,
+  "metadata": {
+    "title": "todo",
+    "repository": "https://gitlab-sjc.cisco.com/cxInnovations/iad/todo"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --coverage=true --testResultsProcessor jest-sonar-reporter",
+    "lint": "eslint src --ext js,jsx,ts,tsx"
+  },
+  "dependencies": {
+    "@vkumov/react-cui-2.0": "6.3.5",
+    "axios": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^18.16.16",
+    "@types/react": "^18.2.8",
+    "@types/react-dom": "^18.2.4",
+    "@types/testing-library__jest-dom": "^5.14.6",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest-sonar-reporter": "^2.0.0",
+    "msw": "^1.2.1",
+    "prettier": "^2.8.8",
+    "react-scripts": "5.0.1",
+    "resize-observer-polyfill": "^1.5.1",
+    "typescript": "^4.9.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "no-console": "off",
+      "no-restricted-syntax": [
+        "warn",
+        {
+          "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(error)$/]",
+          "message": "Unexpected property on console object was called"
+        }
+      ]
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "avoid"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!axios)/"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

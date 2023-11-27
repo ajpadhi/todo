@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="todo" />
+  <title>todo</title>
+  <script charset="UTF-8" type="text/javascript">
+    window["adrum-start-time"] = new Date().getTime();
+    (function (config) {
+      config.appKey = "xyz";
+      config.adrumExtUrlHttp = "http://cdn.appdynamics.com";
+      config.adrumExtUrlHttps = "https://cdn.appdynamics.com";
+      config.beaconUrlHttp = "http://pdx-col.eum-appdynamics.com";
+      config.beaconUrlHttps = "https://pdx-col.eum-appdynamics.com";
+      config.resTiming = { "bufSize": 200, "clearResTimingOnBeaconSend": true };
+      config.maxUrlLength = 512;
+      config.spa = { "spa2": true };
+    })(window["adrum-config"] || (window["adrum-config"] = {}));
+  </script>
+  <script src="//cdn.appdynamics.com/adrum/adrum-22.2.0.3616.js"></script>
+</head>
+
+<body class="cui cui--wide cui--sticky cui--animated" id="app-body">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+
+</html>

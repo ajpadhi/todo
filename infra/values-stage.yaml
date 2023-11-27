@@ -1,0 +1,49 @@
+fqdn: todo-stage.cisco.com
+openshift: true
+
+api:
+  # set this with the `--set api.image=` flag
+  image: null
+server:
+  image: containers.cisco.com/cxinnovations/openresty:1.21.4.1-3-bullseye-openidc
+
+sso:
+  prod: true
+  client_id: null
+  client_secret: null
+
+appdynamics:
+  enabled: false
+
+mongodb:
+  # https://github.com/bitnami/charts/tree/main/bitnami/mongodb
+
+  architecture: standalone
+
+  image:
+    registry: containers.cisco.com
+    repository: cxinnovations/bitnami-mongodb
+    tag: 6.0.5-debian-11-r11
+
+  auth:
+    enabled: true
+    rootUser: root
+    rootPassword: null
+
+  podSecurityContext:
+    fsGroup: 1011260000
+
+  containerSecurityContext:
+    runAsUser: 1011260000
+
+  arbiter:
+    podSecurityContext:
+      fsGroup: 1011260000
+    containerSecurityContext:
+      runAsUser: 1011260000
+
+  hidden:
+    podSecurityContext:
+      fsGroup: 1011260000
+    containerSecurityContext:
+      runAsUser: 1011260000
